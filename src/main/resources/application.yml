@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: simple-eureka-client
+
+server:
+  port: ${PORT:8088}
+
+eureka:
+  instance:
+    hostname: ${DOMAIN_NAME:localhost}
+    nonSecurePort: 80
+    password: ${USER_PASSWORD:password}
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_INSTANCE_URL:http://levik:password@localhost:5000}/eureka/
+
